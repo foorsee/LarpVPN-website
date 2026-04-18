@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почему Пегасы? — LarpVPN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html, body { height: 100%; margin: 0; }
+        body {
+            display: flex; flex-direction: column;
+            font-family: 'Unbounded', sans-serif;
+            background: linear-gradient(180deg, #eaf6ff 0%, #bfe3ff 100%);
+            background-attachment: fixed;
+            padding-top: 80px; overflow-x: hidden;
+            color: #333;
+        }
+
+        .wrapper { flex: 1 0 auto; position: relative; z-index: 1; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER */
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; height: 60px;
+            background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 20px; z-index: 1000;
+        }
+        .logo { font-weight: 700; font-size: 20px; text-decoration: none; color: #333; }
+
+        /* ПАНЕЛЬ УПРАВЛЕНИЯ ПЕГАСАМИ */
+        .controls {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .counter-badge {
+            background: #0095FF;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .ctrl-btn {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-on { background: #28a745; color: white; }
+        .btn-off { background: #dc3545; color: white; }
+        .btn-plus { background: #0095FF; color: white; }
+        
+        .ctrl-btn:hover { transform: scale(1.05); opacity: 0.9; }
+        .ctrl-btn:active { transform: scale(0.95); }
+
+        /* CONTENT BOX */
+        .page-box {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border-radius: 32px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 40px rgba(0, 149, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        h1 { color: #0095FF; font-size: 32px; margin-bottom: 24px; }
+        h2 { font-size: 20px; color: #0095FF; margin-top: 30px; }
+        p { line-height: 1.7; color: #444; }
+
+        /* HORSES */
+        .horse {
+            position: fixed; width: 100px; height: auto; z-index: 0;
+            left: -150px; pointer-events: none;
+        }
+        @keyframes horse-gallop {
+            0% { left: -150px; transform: translateY(0) rotate(0deg); }
+            10% { transform: translateY(-60px) rotate(-20deg); } 
+            20% { transform: translateY(0) rotate(15deg); }    
+            100% { left: 110%; transform: translateY(0) rotate(0deg); }
+        }
+
+        .footer { padding: 40px 0; text-align: center; }
+        .footer a { color: #0095FF; text-decoration: none; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header">
+        <a href="index.html" class="logo">LarpVPN</a>
+        <a href="https://t.me/LarpVpnBot" style="background:#0095FF; color:#fff; padding:8px 18px; border-radius:12px; text-decoration:none; font-size:14px;">В бот</a>
+    </header>
+
+    <main class="container">
+        <div class="controls">
+            <div class="counter-badge">Пегасов: <span id="horse-count">0</span> / 420</div>
+            <button class="ctrl-btn btn-on" onclick="toggleSpawning(true)">Включить</button>
+            <button class="ctrl-btn btn-off" onclick="toggleSpawning(false)">Выключить</button>
+            <button class="ctrl-btn btn-plus" onclick="addHerd()">+10 Пегасов</button>
+        </div>
+
+        <div class="page-box">
+            <h1>Почему именно Пегасы? 🐎✨</h1>
+            <p>Пегас — это не просто красивая картинка. В LarpVPN мы выбрали этот образ, потому что он идеально отражает дух нашего сервиса.</p>
+
+            <h2>1. Свобода и полёт</h2>
+            <p>Крылья Пегаса — это символ выхода за земные пределы. Мы верим, что интернет должен быть таким же — свободным от границ, цензуры и искусственных препятствий. Пегас летит там, где другие не могут пройти.</p>
+
+            <h2>2. Свобода через вдохновение</h2>
+            <ul class="accent-list">
+                <li><b>Творчество:</b> Пегас ударом копыта выбил источник вдохновения. Мы даем вам доступ к знаниям и мировому контенту.</li>
+                <li><b>Дух:</b> Это символ роста и преодоления ограничений.</li>
+                <li><b>Безопасность:</b> Высокий полёт позволяет быть недосягаемым для тех, кто остался внизу.</li>
+                <li><b>Пользователи LarpVPN подобны пегасам, они свободны, вольны и уверенны.</b></li>
+            </ul>
+
+            <p style="margin-top:30px; font-style: italic; opacity: 0.8;">«Пегас — это движение вверх. Это ваша возможность быть свободными в цифровом мире благодаря технологиям и воображению». </p>
+        </div>
+    </main>
+</div>
+
+<footer class="footer">
+    <a href="index.html">На главную</a>
+</footer>
+
+<script>
+    const MAX_HORSES = 420;
+    let horseCount = 0;
+    let isSpawning = true;
+    const countDisplay = document.getElementById('horse-count');
+
+    function updateDisplay() {
+        countDisplay.innerText = horseCount;
+    }
+
+    function createHorse() {
+        if (horseCount >= MAX_HORSES) return;
+
+        const horse = document.createElement('img');
+        horse.src = 'horse.png';
+        horse.className = 'horse';
+        
+        const randomTop = Math.floor(Math.random() * 85) + 5;
+        horse.style.top = randomTop + '%';
+        
+        const speedInput = Math.random() * 9 + 1; 
+        const duration = 15.5 - (speedInput * 1.4);
+        horse.style.animation = `horse-gallop ${duration}s linear forwards`;
+        
+        horseCount++;
+        updateDisplay();
+
+        horse.addEventListener('animationend', () => {
+            horse.remove();
+            horseCount--;
+            updateDisplay();
+            
+            // НОВАЯ ЛОГИКА: 1 превращается в 2
+            if (isSpawning) {
+                // Создаем первую замену
+                if (horseCount < MAX_HORSES) {
+                    createHorse();
+                }
+                // Создаем вторую (удвоение), если позволяет лимит
+                if (horseCount < MAX_HORSES) {
+                    createHorse();
+                }
+            }
+        });
+
+        document.body.appendChild(horse);
+    }
+
+    function toggleSpawning(state) {
+        isSpawning = state;
+        // Если включили и на экране пусто — запускаем первого
+        if (state && horseCount === 0) {
+            createHorse();
+        }
+    }
+
+    function addHerd() {
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => {
+                if (horseCount < MAX_HORSES) createHorse();
+            }, i * 150); 
+        }
+    }
+
+    // Стартовый пегас
+    createHorse();
+</script>
+
+</body>
+</html> 

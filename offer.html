@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Публичная оферта — LarpVPN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Unbounded', sans-serif;
+            background: linear-gradient(180deg, #eaf6ff 0%, #bfe3ff 100%);
+            background-attachment: fixed;
+            padding-top: 80px; /* Отступ под шапку */
+            color: #333;
+        }
+
+        .wrapper {
+            flex: 1 0 auto;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .header-btn {
+            background: #0095FF;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* КОНТЕНТНАЯ ОБЛАСТЬ */
+        .page-box {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(0, 149, 255, 0.1);
+            line-height: 1.6;
+        }
+
+        h1 { font-size: 28px; color: #0095FF; margin-bottom: 30px; }
+        b { color: #000; }
+        
+        blockquote {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0, 149, 255, 0.05);
+            border-left: 4px solid #0095FF;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        .page-box a { color: #0095FF; text-decoration: none; font-weight: 500; }
+        .page-box a:hover { text-decoration: underline; }
+
+        /* FOOTER */
+        .footer {
+            flex-shrink: 0;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            margin: 0 15px;
+            color: #0095FF;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* ШАРИКИ (ОБЛАКА) */
+        .cloud {
+            position: fixed;
+            width: 300px;
+            height: 150px;
+            background: rgba(0, 149, 255, 0.4);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+            left: -350px;
+            animation: float 25s linear infinite;
+        }
+
+        @keyframes float {
+            0% { left: -350px; }
+            100% { left: 120%; }
+        }
+
+        @media (max-width: 768px) {
+            .page-box { padding: 25px; font-size: 14px; }
+            h1 { font-size: 22px; }
+            .footer { display: flex; flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cloud" style="top:10%;"></div>
+<div class="cloud" style="top:50%; animation-duration:35s;"></div>
+
+<div class="wrapper">
+    <header class="header">
+        <a href="index.html" class="logo-link">LarpVPN</a>
+        <a href="https://t.me/LarpVPN" class="header-btn">Наш канал</a>
+    </header>
+
+    <main class="container">
+        <div class="page-box">
+            <h1>📄 Публичная оферта LarpVPN</h1>
+            
+            <p><b>1. Термины и определения</b></p>
+            <ul>
+                <li><b>LarpVPN</b> — сервис, предоставляющий услуги виртуальной частной сети (VPN).</li>
+                <li><b>Пользователь</b> — физическое лицо, принявшее условия настоящей оферты.</li>
+                <li><b>Услуги</b> — предоставление доступа к VPN-инфраструктуре LarpVPN.</li>
+                <li><b>Тариф</b> — выбранный план оказания услуг с ограниченным сроком действия.</li>
+            </ul>
+
+            <p><b>2. Предмет договора</b></p>
+            <p>2.1 Исполнитель предоставляет доступ к VPN-сервису, а Пользователь оплачивает услуги согласно оферте.<br>
+            2.2 Услуги оказываются дистанционно через сеть Интернет.<br>
+            2.3 Сервис предоставляется по принципу <i>«как есть» (as is)</i>, без каких-либо гарантий.</p>
+
+            <p><b>3. Порядок оказания услуг</b></p>
+            <p>3.1 Доступ предоставляется <b>после подтверждения оплаты</b>.<br>
+            3.2 Услуги считаются оказанными в момент предоставления доступа к конфигурации/серверу.<br>
+            3.3 Исполнитель вправе приостанавливать работу для тех. работ или обновлений.</p>
+
+            <p><b>4. Стоимость и порядок оплаты</b></p>
+            <p>4.1 Стоимость указана в тарифах внутри интерфейса (Telegram-бот).<br>
+            4.2 Оплата производится на условиях <b>100% предоплаты</b>.</p>
+
+            <p><b>5. Возврат денежных средств</b></p>
+            <blockquote>Услуги LarpVPN относятся к цифровым товарам. Возврат после предоставления доступа не осуществляется, за исключением случаев, предусмотренных законом или по решению администрации.</blockquote>
+
+            <p><b>6. Права и обязанности сторон</b></p>
+            <p><u>Пользователь обязан:</u><br>
+            — Использовать сервис только в законных целях;<br>
+            — Соблюдать законы страны своего пребывания;<br>
+            — Не передавать доступ третьим лицам.</p>
+
+            <p><u>Исполнитель вправе:</u><br>
+            — Изменять тарифы и условия без уведомления;<br>
+            — Блокировать доступ при нарушении правил.</p>
+
+            <p><b>7. Ответственность</b></p>
+            <ul>
+                <li>Пользователь несет <u>полную личную ответственность</u> за свои действия.</li>
+                <li>Исполнитель не гарантирует 100% бесперебойную работу (зависит от сторонних провайдеров и магистралей).</li>
+            </ul>
+
+            <p><b>8. Конфиденциальность</b></p>
+            <p>Данные обрабатываются согласно <a href="privacy.html">Политике конфиденциальности</a>.</p>
+
+            <p><b>9. Срок действия и право</b></p>
+            <p>9.1 Оферта действует бессрочно с момента публикации.<br>
+            9.2 Применимое право — законодательство РФ.</p>
+
+            <p><b>11. Контактная информация</b></p>
+            <p>По всем вопросам: <a href="https://t.me/LarpVpnBot">@LarpVpnBot</a></p>
+        </div>
+    </main>
+</div>
+
+<footer class="footer">
+    <div class="container footer-links">
+        <a href="index.html">На главную</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="tos.html">Правила сервиса</a>
+
+        <a href="pegasus.html" class="pegasus-btn">Почему пегасы?</a>
+    </div>
+</footer>
+
+<style>
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 3 ссылки в ряд */
+.footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* кнопка снизу */
+.pegasus-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 149, 255, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 50px;
+    color: #0095FF !important;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    animation: float-btn 4s ease-in-out infinite;
+}
+
+/* hover без transform (чтобы не конфликтовало с анимацией) */
+.pegasus-btn:hover {
+    background: rgba(0, 149, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 149, 255, 0.1);
+}
+
+@keyframes float-btn {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+</style>
+
+</body>
+</html>

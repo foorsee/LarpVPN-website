@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LarpVPN — Надежный сервис</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html, body { height: 100%; margin: 0; }
+        body {
+            display: flex; flex-direction: column;
+            font-family: 'Unbounded', sans-serif;
+            background: linear-gradient(180deg, #eaf6ff 0%, #bfe3ff 100%);
+            background-attachment: fixed;
+            padding-top: 70px; overflow-x: hidden;
+        }
+        .wrapper { flex: 1 0 auto; position: relative; z-index: 1; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+        /* HEADER */
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; height: 60px;
+            background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 20px; box-sizing: border-box; z-index: 1000;
+        }
+        .logo { font-weight: 700; font-size: 20px; color: #333; }
+        .header-btn {
+            background: #0095FF; color: #fff; padding: 8px 18px; border-radius: 12px;
+            text-decoration: none; font-size: 14px; transition: transform 0.2s;
+        }
+        .header-btn:hover { transform: scale(1.05); }
+
+        /* HERO & FEATURES */
+        .hero { text-align: center; padding: 60px 20px 40px; }
+        .hero h1 { font-size: 42px; margin-bottom: 10px; line-height: 1.2; }
+        .features { padding: 40px 0; }
+        .features h2 { text-align: center; margin-bottom: 40px; }
+        .cards { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .card {
+            border: 2px solid #0095FF; border-radius: 20px; padding: 24px; width: 300px;
+            background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(5px);
+        }
+        .blue-title { color: #0095FF; font-weight: 700; font-size: 20px; margin-bottom: 8px; }
+        .black-sub { font-size: 16px; color: #333; font-style: italic; }
+
+        .main-cta-btn {
+            display: inline-block; background: #0095FF; color: #fff; padding: 20px 40px;
+            border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 20px;
+            box-shadow: 0 10px 20px rgba(0, 149, 255, 0.3); transition: all 0.3s ease;
+        }
+
+        /* CLOUDS */
+        .cloud {
+            position: fixed; width: 300px; height: 150px;
+            background: rgba(0, 149, 255, 0.4); border-radius: 50%;
+            filter: blur(60px); z-index: -1; left: -350px;
+            animation: cloud-float 25s linear infinite;
+        }
+        @keyframes cloud-float { 0% { left: -350px; } 100% { left: 120%; } }
+
+        /* HORSE - Резкая анимация "скачек" */
+        .horse {
+            position: fixed; width: 100px; height: auto; z-index: 0;
+            left: -150px; pointer-events: none;
+            will-change: left, transform;
+        }
+
+        @keyframes horse-gallop {
+            0% { left: -150px; transform: translateY(0) rotate(0deg); }
+            10% { transform: translateY(-60px) rotate(-20deg); } 
+            20% { transform: translateY(0) rotate(15deg); }    
+            30% { transform: translateY(-60px) rotate(-20deg); }
+            40% { transform: translateY(0) rotate(15deg); }
+            50% { transform: translateY(-60px) rotate(-20deg); }
+            60% { transform: translateY(0) rotate(15deg); }
+            70% { transform: translateY(-60px) rotate(-20deg); }
+            80% { transform: translateY(0) rotate(15deg); }
+            90% { transform: translateY(-60px) rotate(-20deg); }
+            100% { left: 110%; transform: translateY(0) rotate(0deg); }
+        }
+
+        .footer { flex-shrink: 0; padding: 40px 0; text-align: center; }
+        .footer a { margin: 0 15px; color: #0095FF; text-decoration: none; font-weight: 500; font-size: 14px; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            .cards { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cloud" style="top:10%;"></div>
+<div class="cloud" style="top:50%; animation-duration:30s;"></div>
+
+<div class="wrapper">
+    <header class="header">
+        <div class="logo">LarpVPN</div>
+        <a href="https://t.me/LarpVPN" class="header-btn">Наш канал</a>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Надежный VPN сервис за 99₽/мес.</h1>
+            <p>Для вашего удобства и безопасности</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Наши преимущества</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="blue-title">Быстрые локации</div>
+                    <div class="black-sub">Скорость от 1GB в секунду</div>
+                </div>
+                <div class="card">
+                    <div class="blue-title">Без логов</div>
+                    <div class="black-sub">Никто не увидит, что вы открывали</div>
+                </div>
+                <div class="card">
+                    <div class="blue-title">Множество локаций</div>
+                    <div class="black-sub">Россия, Германия, Литва и другие</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="text-align: center; padding: 40px 0;">
+        <a href="https://t.me/LarpVpnBot" class="main-cta-btn">Подключиться сейчас</a>
+    </section>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div style="margin-bottom: 25px;">
+            <a href="./offer.html">Договор оферты</a>
+            <a href="./privacy.html">Политика конфиденциальности</a>
+            <a href="./tos.html">Правила сервиса</a>
+        </div>
+        
+        <a href="pegasus.html" class="pegasus-btn">Почему пегасы?</a>
+    </div>
+</footer>
+
+<style>
+    /* Стиль новой кнопки в футере */
+    .pegasus-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(0, 149, 255, 0.3);
+        backdrop-filter: blur(8px);
+        border-radius: 50px;
+        color: #0095FF !important;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        animation: float-btn 4s ease-in-out infinite; /* Кнопка плавает */
+    }
+
+    .pegasus-btn:hover {
+        background: rgba(0, 149, 255, 0.1);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 149, 255, 0.1);
+    }
+
+    @keyframes float-btn {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+</style>
+
+<script>
+    const MAX_HORSES = 20;
+    let horseCount = 0;
+    let startTime = Date.now();
+
+    function createHorse() {
+        if (horseCount >= MAX_HORSES) return;
+
+        const horse = document.createElement('img');
+        horse.src = 'horse.png';
+        horse.className = 'horse';
+        
+        // Рандомная высота
+        const randomTop = Math.floor(Math.random() * 80) + 10;
+        horse.style.top = randomTop + '%';
+        
+        // Рандомная скорость от 1 до 10 единиц (превращаем в секунды анимации)
+        // 1 единица = 14 сек (медленно), 10 единиц = 1.5 сек (очень быстро)
+        const speedInput = Math.random() * 9 + 1; 
+        const duration = 15.5 - (speedInput * 1.4);
+        
+        horse.style.animation = `horse-gallop ${duration}s linear forwards`;
+        
+        horseCount++;
+
+        horse.addEventListener('animationend', () => {
+            horse.remove();
+            horseCount--;
+            
+            // Логика размножения
+            const timePassed = Date.now() - startTime;
+            if (timePassed > 10000) {
+                // Если прошло 10 сек, размножаем 1 в 2
+                createHorse();
+                createHorse();
+            } else {
+                // Если еще не прошло 10 сек, просто восстанавливаем
+                createHorse();
+            }
+        });
+
+        document.body.appendChild(horse);
+    }
+
+    // Первые 10 секунд: спавним по 1 лошади в секунду (всего 10 штук)
+    let initialSpawner = setInterval(() => {
+        const timePassed = Date.now() - startTime;
+        if (timePassed < 10000) {
+            createHorse();
+        } else {
+            clearInterval(initialSpawner);
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
