@@ -133,6 +133,15 @@
     </section>
 </div>
 
+<section style="text-align: center; padding: 20px 0 10px;">
+    <a href="https://t.me/proxy?server=mtde1.larpvpn.com&port=443&secret=eebe9f44e3e33c3a916f0c064c1c69c4446c672e646567656e2e736f79"
+       id="tgProxyBtn"
+       class="main-cta-btn"
+       style="font-size: 16px; padding: 14px 28px; border-radius: 18px;">
+        Не работает телеграм?
+    </a>
+</section>
+
 <footer class="footer">
     <div class="container">
         <div style="margin-bottom: 25px;">
@@ -227,7 +236,45 @@
             clearInterval(initialSpawner);
         }
     }, 1000);
+    document.getElementById('tgProxyBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const proxyLink = "tg://proxy?server=mtde1.larpvpn.com&port=443&secret=eebe9f44e3e33c3a916f0c064c1c69c4446c672e646567656e2e736f79";
+
+    // копирование
+    navigator.clipboard.writeText(proxyLink).catch(() => {});
+
+    // открыть Telegram ссылку
+    window.open(proxyLink, '_blank');
+
+    // toast
+    const toast = document.getElementById('toast');
+    toast.style.opacity = "1";
+
+    setTimeout(() => {
+        toast.style.opacity = "0";
+    }, 5000);
+});
 </script>
+
+<div id="toast" style="
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 149, 255, 0.95);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+">
+    Прокси скопирован, вставьте его в Telegram и активируйте!
+</div>
 
 </body>
 </html>
