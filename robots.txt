@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://larpvpn.com/sitemap.xml
