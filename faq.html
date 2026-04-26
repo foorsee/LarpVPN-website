@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="horse.png">
+    <title>FAQ (Частые вопросы) — LarpVPN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Unbounded', sans-serif;
+            background: linear-gradient(180deg, #eaf6ff 0%, #bfe3ff 100%);
+            background-attachment: fixed;
+            padding-top: 80px;
+            color: #333;
+        }
+        .wrapper {
+            flex: 1 0 auto;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .header-btn {
+            background: #0095FF;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* КОНТЕНТНАЯ ОБЛАСТЬ */
+        .page-box {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(0, 149, 255, 0.1);
+            line-height: 1.6;
+        }
+        h1 { font-size: 28px; color: #0095FF; margin-bottom: 30px; }
+
+        /* FAQ АККОРДЕОН */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 149, 255, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item.active {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 149, 255, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 149, 255, 0.08);
+        }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 20px;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: rgba(0, 149, 255, 0.05);
+        }
+        .faq-icon {
+            font-size: 24px;
+            color: #0095FF;
+            transition: transform 0.3s ease;
+            line-height: 1;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        /* КОНТЕНТ ОТВЕТА */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease;
+            padding: 0 20px;
+            color: #444;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 4000px; /* Увеличено для длинного списка с покупкой */
+            padding: 0 20px 20px 20px;
+        }
+        
+        /* СТИЛИ ДЛЯ ШАГОВ И КАРТИНОК */
+        .instruction-step {
+            margin-top: 20px;
+            padding-left: 15px;
+            border-left: 3px solid rgba(0, 149, 255, 0.3);
+        }
+        .step-text {
+            font-weight: 400; /* Базовый вес текста */
+            margin-bottom: 10px;
+        }
+        .faq-img {
+            max-width: 320px; /* Ограничение ширины для ПК */
+            width: 100%; /* Адаптивность для мобильных */
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 149, 255, 0.1);
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* Выделение текста в инструкциях */
+        b { color: #000; font-weight: 700; }
+        i { color: #0095FF; }
+        
+        .thank-you-msg {
+            text-align: center;
+            margin-top: 35px;
+            font-size: 18px;
+            color: #0095FF;
+        }
+
+        /* FOOTER */
+        .footer {
+            flex-shrink: 0;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #0095FF;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .pegasus-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(0, 149, 255, 0.3);
+            backdrop-filter: blur(8px);
+            border-radius: 50px;
+            color: #0095FF !important;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            animation: float-btn 4s ease-in-out infinite;
+            position: relative;
+        }
+        .pegasus-btn:hover {
+            background: rgba(0, 149, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 149, 255, 0.1);
+        }
+
+        /* ШАРИКИ */
+        .cloud {
+            position: fixed;
+            width: 300px;
+            height: 150px;
+            background: rgba(0, 149, 255, 0.4);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+            left: -350px;
+            animation: float 25s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { left: -350px; }
+            100% { left: 120%; }
+        }
+        @keyframes float-btn {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @media (max-width: 768px) {
+            .page-box { padding: 25px; font-size: 14px; }
+            h1 { font-size: 22px; }
+            .faq-question { font-size: 14px; padding: 15px; }
+            .faq-item.active .faq-answer { padding: 0 15px 15px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cloud" style="top:30%;"></div>
+<div class="cloud" style="top:70%; animation-duration:32s;"></div>
+
+<div class="wrapper">
+    <header class="header">
+        <a href="index.html" class="logo-link">LarpVPN</a>
+        <a href="https://t.me/LarpVPN" class="header-btn">Наш канал</a>
+    </header>
+
+    <main class="container">
+        <div class="page-box">
+            <h1>❓ Частые вопросы</h1>
+            
+            <div class="faq-list">
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        1. Как купить подписку?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        
+                        <div class="instruction-step">
+                            <div class="step-text">Зайдите в главное меню нашего бота (<i>@LarpVpnBot</i>) и выберите <b>"Купить подписку"</b>.</div>
+                            <img src="bot1.jpg" alt="Главное меню бота" class="faq-img">
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-text">Выберите нужный Вам <b>период подписки</b>.</div>
+                            <img src="bot2.jpg" alt="Выбор периода" class="faq-img">
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-text">Выберите желаемое <b>количество устройств</b> в подписке и нажмите <i>"Продолжить"</i>.</div>
+                            <img src="bot3.jpg" alt="Количество устройств" class="faq-img">
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-text">Выберите удобный <b>способ оплаты</b>.</div>
+                            <img src="bot4.jpg" alt="Способ оплаты" class="faq-img">
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-text">Оплатите, используя <i>выбранный Вами способ</i>.</div>
+                            <img src="bot5.jpg" alt="Процесс оплаты" class="faq-img">
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-text">После успешного пополнения, нажмите кнопку <b>"Вернуться к оформлению подписки"</b>.</div>
+                            <img src="bot6.jpg" alt="Возврат к оформлению" class="faq-img">
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-text">Проверьте, все ли Вы выбрали верно, затем нажмите <b>"Подтвердить покупку"</b>.</div>
+                            <img src="bot7.jpg" alt="Подтверждение покупки" class="faq-img">
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-text">Поздравляем, Вы успешно купили подписку! Следуйте инструкциям по кнопке <b>"Подключиться"</b>, чтобы активировать ее в удобном для Вас приложении.</div>
+                            <img src="bot8.jpg" alt="Успешная покупка" class="faq-img">
+                        </div>
+
+                        <p class="thank-you-msg"><b>Спасибо что выбрали LarpVPN!</b></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        2. Почему пинг такой высокий?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Вероятно, разница обусловлена тем, что клиент использует другой алгоритм расчета задержки: время измеряется посредством выполнения GET-запроса, а не через стандартный интервал в миллисекундах.</p>
+                        
+                        <div class="instruction-step">
+                            <div class="step-text">Вот как можно это исправить на примере Happ:</div>
+                            <img src="pingscr1.png" alt="Главный экран приложения" class="faq-img">
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-text">Зайдите в настройки программы:</div>
+                            <img src="pingscr2.png" alt="Настройки программы" class="faq-img">
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-text">Найдите пункт <b>"Пинг"</b> (Ping) и откройте его:</div>
+                            <img src="pingscr3.png" alt="Настройки пинга" class="faq-img">
+                        </div>
+                        
+                        <div class="instruction-step">
+                            <div class="step-text">Выберите метод проверки пинга. Обычно используются <b>TCP</b> или <b>ICMP</b>.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="footer-links">
+            <a href="./index.html">На главную</a>
+            <a href="./rules.html">Правила использования</a>
+            <a href="./offer.html">Договор оферты</a>
+            <a href="./privacy.html">Политика конфиденциальности</a>
+        </div>
+        <a href="pegasus.html" class="pegasus-btn">Почему пегасы?</a>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            
+            // Если нужно, чтобы при открытии одного закрывались другие (раскомментируйте код ниже):
+            // document.querySelectorAll('.faq-item').forEach(item => {
+            //     if(item !== faqItem) item.classList.remove('active');
+            // });
+
+            faqItem.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>
