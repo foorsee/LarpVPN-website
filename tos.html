@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <title>Правила использования — LarpVPN</title>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
         }
@@ -35,7 +37,9 @@
         /* HEADER */
         .header {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 60px;
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
@@ -74,9 +78,16 @@
             line-height: 1.6;
         }
 
-        h1 { font-size: 28px; color: #0095FF; margin-bottom: 30px; }
-        b { color: #000; }
-        
+        h1 {
+            font-size: 28px;
+            color: #0095FF;
+            margin-bottom: 30px;
+        }
+
+        b {
+            color: #000;
+        }
+
         blockquote {
             margin: 20px 0;
             padding: 20px;
@@ -86,8 +97,15 @@
             font-style: italic;
         }
 
-        .page-box a { color: #0095FF; text-decoration: none; font-weight: 500; }
-        .page-box a:hover { text-decoration: underline; }
+        .page-box a {
+            color: #0095FF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .page-box a:hover {
+            text-decoration: underline;
+        }
 
         /* FOOTER */
         .footer {
@@ -118,147 +136,185 @@
         }
 
         @keyframes float {
-            0% { left: -350px; }
-            100% { left: 120%; }
+            0% {
+                left: -350px;
+            }
+
+            100% {
+                left: 120%;
+            }
         }
 
         @media (max-width: 768px) {
-            .page-box { padding: 25px; font-size: 14px; }
-            h1 { font-size: 22px; }
-            .footer { display: flex; flex-direction: column; gap: 15px; }
+            .page-box {
+                padding: 25px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .footer {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<div class="cloud" style="top:30%;"></div>
-<div class="cloud" style="top:70%; animation-duration:32s;"></div>
+    <div class="cloud" style="top:30%;"></div>
+    <div class="cloud" style="top:70%; animation-duration:32s;"></div>
 
-<div class="wrapper">
-    <header class="header">
-        <a href="index.html" class="logo-link">LarpVPN</a>
-        <a href="https://t.me/LarpVPN" class="header-btn">Наш канал</a>
-    </header>
+    <div class="wrapper">
+        <header class="header">
+            <a href="index.html" class="logo-link">LarpVPN</a>
+            <a href="https://t.me/LarpVPN" class="header-btn">Наш канал</a>
+        </header>
 
-    <main class="container">
-        <div class="page-box">
-            <h1>📜 Правила использования LarpVPN</h1>
-            
-            <p><b>1. Общие положения</b></p>
-            <p>1.1 <b>LarpVPN</b> — это инструмент для создания защищенного интернет-соединения.<br>
-            1.2 Мы предоставляем доступ «как есть». Это значит, что стабильность зависит не только от нас, но и от глобальных магистралей связи.<br>
-            1.3 Вы сами решаете, как использовать сервис, и <u>полностью отвечаете за свои действия</u>.</p>
+        <main class="container">
+            <div class="page-box">
+                <h1>📜 Правила использования LarpVPN</h1>
 
-            <p><b>2. Этикет и запреты</b></p>
-            <blockquote>Мы за свободный интернет, но против цифрового беспредела.</blockquote>
-            <p><u>Строго запрещено использовать LarpVPN для:</u><br>
-            — Любых действий, нарушающих закон;<br>
-            — Распространения вирусов и вредоносного ПО;<br>
-            — DDoS-атак, брутфорса и взлома сетей;<br>
-            — Массовых рассылок (спама);<br>
-            — Ущемления прав других пользователей.</p>
+                <p><b>1. Общие положения</b></p>
+                <p>1.1 <b>LarpVPN</b> — это инструмент для создания защищенного интернет-соединения.<br>
+                    1.2 Мы предоставляем доступ «как есть». Это значит, что стабильность зависит не только от нас, но и
+                    от глобальных магистралей связи.<br>
+                    1.3 Вы сами решаете, как использовать сервис, и <u>полностью отвечаете за свои действия</u>.</p>
 
-            <p><b>3. Доступ и безопасность</b></p>
-            <p>3.1 Весь функционал доступен через наш <b>Telegram-бот</b>.<br>
-            3.2 Ваши ключи доступа (UUID/VLESS) — это ваш личный пароль. <b>Не передавайте их третьим лицам.</b><br>
-            3.3 Если вы поделились ключом, ответственность за всё, что произойдет через этот туннель, лежит на вас.</p>
+                <p><b>2. Этикет и запреты</b></p>
+                <blockquote>Мы за свободный интернет, но против цифрового беспредела.</blockquote>
+                <p><u>Строго запрещено использовать LarpVPN для:</u><br>
+                    — Любых действий, нарушающих закон;<br>
+                    — Распространения вирусов и вредоносного ПО;<br>
+                    — DDoS-атак, брутфорса и взлома сетей;<br>
+                    — Массовых рассылок (спама);<br>
+                    — Ущемления прав других пользователей.</p>
 
-            <p><b>4. Оплата и подписки</b></p>
-            <p>4.1 Доступ к серверам предоставляется по тарифным планам.<br>
-            4.2 Работаем по системе <b>предоплаты</b>.<br>
-            4.3 Возврат за неиспользованный период не предусмотрен (цифровой товар), если иное не решено поддержкой в индивидуальном порядке.</p>
+                <p><b>3. Доступ и безопасность</b></p>
+                <p>3.1 Весь функционал доступен через наш <b>Telegram-бот</b>.<br>
+                    3.2 Ваши ключи доступа (UUID/VLESS) — это ваш личный пароль. <b>Не передавайте их третьим
+                        лицам.</b><br>
+                    3.3 Если вы поделились ключом, ответственность за всё, что произойдет через этот туннель, лежит на
+                    вас.</p>
 
-            <p><b>5. Ограничение ответственности</b></p>
-            <ul>
-                <li>Скорость соединения (она зависит от вашего провайдера);</li>
-                <li>Блокировки конкретных сайтов внешними регуляторами;</li>
-                <li>Работу платежных сервисов и сторонних провайдеров.</li>
-            </ul>
+                <p><b>4. Оплата и подписки</b></p>
+                <p>4.1 Доступ к серверам предоставляется по тарифным планам.<br>
+                    4.2 Работаем по системе <b>предоплаты</b>.<br>
+                    4.3 Возврат за неиспользованный период не предусмотрен (цифровой товар), если иное не решено
+                    поддержкой в индивидуальном порядке.</p>
 
-            <p><b>6. Нарушение правил</b></p>
-            <p>6.1 Мы можем временно или навсегда закрыть доступ, если вы нарушаете правила или <i>злоупотребляете ресурсами системы</i>.<br>
-            6.2 При серьезных нарушениях (например, атаки с наших серверов) доступ аннулируется <b>без возврата средств</b>.</p>
+                <p><b>5. Ограничение ответственности</b></p>
+                <ul>
+                    <li>Скорость соединения (она зависит от вашего провайдера);</li>
+                    <li>Блокировки конкретных сайтов внешними регуляторами;</li>
+                    <li>Работу платежных сервисов и сторонних провайдеров.</li>
+                </ul>
 
-            <p><b>7. Финальные штрихи</b></p>
-            <p>7.1 Мы можем менять правила, чтобы сервис становился лучше.<br>
-            7.2 Актуальная версия всегда доступна в боте. Ваше использование сервиса — это согласие с этими правилами.</p>
+                <p><b>6. Нарушение правил</b></p>
+                <p>6.1 Мы можем временно или навсегда закрыть доступ, если вы нарушаете правила или <i>злоупотребляете
+                        ресурсами системы</i>.<br>
+                    6.2 При серьезных нарушениях (например, атаки с наших серверов) доступ аннулируется <b>без возврата
+                        средств</b>.</p>
 
-            <p><b>📍 Поддержка</b></p>
-            <p>Есть вопросы? Пиши нам: <a href="https://t.me/LarpVpnBot">@LarpVpnBot</a></p>
-        </div>
-    </main>
-</div>
+                <p><b>7. Финальные штрихи</b></p>
+                <p>7.1 Мы можем менять правила, чтобы сервис становился лучше.<br>
+                    7.2 Актуальная версия всегда доступна в боте. Ваше использование сервиса — это согласие с этими
+                    правилами.</p>
 
-<footer class="footer">
-    <div class="container footer-content">
-        
-        <div class="footer-links">
-            <a href="./index.html">На главную</a>
-            <a href="./offer.html">Договор оферты</a>
-            <a href="./privacy.html">Политика конфиденциальности</a>
-        </div>
-        
-        <a href="pegasus.html" class="pegasus-btn">Почему пегасы?</a>
-        
+                <p><b>📍 Поддержка</b></p>
+                <p>Есть вопросы? Пиши нам: <a href="https://t.me/LarpVpnBot">@LarpVpnBot</a></p>
+            </div>
+        </main>
     </div>
-</footer>
 
-<style>
-/* Центрируем содержимое футера */
-.footer {
-    padding: 40px 0;
-    text-align: center;
-}
+    <footer class="footer">
+        <div class="container footer-content">
 
-.footer-content {
-    display: flex;
-    flex-direction: column; /* Элементы (ссылки и кнопка) встают друг под другом */
-    align-items: center;    /* Центровка по горизонтали */
-    gap: 25px;             /* Расстояние между блоком ссылок и кнопкой */
-}
+            <div class="footer-links">
+                <a href="./index.html">На главную</a>
+                <a href="./offer.html">Договор оферты</a>
+                <a href="./privacy.html">Политика конфиденциальности</a>
+                <a href="./faq.html">Частые вопросы</a>
+            </div>
 
-/* Ссылки в ряд */
-.footer-links {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;       /* Чтобы на мобилках ссылки не слипались, а переносились */
-}
+            <a href="pegasus.html" class="pegasus-btn">Почему пегасы?</a>
 
-.footer-links a {
-    color: #0095FF;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-}
+        </div>
+    </footer>
 
-/* Кнопка */
-.pegasus-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(0, 149, 255, 0.3);
-    backdrop-filter: blur(8px);
-    border-radius: 50px;
-    color: #0095FF !important;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    animation: float-btn 4s ease-in-out infinite;
-    position: relative; /* Гарантирует правильное отображение */
-}
+    <style>
+        /* Центрируем содержимое футера */
+        .footer {
+            padding: 40px 0;
+            text-align: center;
+        }
 
-.pegasus-btn:hover {
-    background: rgba(0, 149, 255, 0.1);
-    box-shadow: 0 10px 20px rgba(0, 149, 255, 0.1);
-}
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            /* Элементы (ссылки и кнопка) встают друг под другом */
+            align-items: center;
+            /* Центровка по горизонтали */
+            gap: 25px;
+            /* Расстояние между блоком ссылок и кнопкой */
+        }
 
-@keyframes float-btn {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-</style>
+        /* Ссылки в ряд */
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            /* Чтобы на мобилках ссылки не слипались, а переносились */
+        }
+
+        .footer-links a {
+            color: #0095FF;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* Кнопка */
+        .pegasus-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(0, 149, 255, 0.3);
+            backdrop-filter: blur(8px);
+            border-radius: 50px;
+            color: #0095FF !important;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            animation: float-btn 4s ease-in-out infinite;
+            position: relative;
+            /* Гарантирует правильное отображение */
+        }
+
+        .pegasus-btn:hover {
+            background: rgba(0, 149, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 149, 255, 0.1);
+        }
+
+        @keyframes float-btn {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+    </style>
 
 </body>
+
 </html>
